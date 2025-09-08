@@ -35,6 +35,9 @@ jobs:
         with:
           name: To-do-jar
           path: target/*.jar
-      
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: To-do-jar
       
 
