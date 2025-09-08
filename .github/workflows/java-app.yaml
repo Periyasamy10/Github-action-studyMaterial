@@ -18,6 +18,8 @@ on:
 jobs:
   JAVA-Build:
     runs-on: ubuntu-latest
+    outputs:
+      jar : ${{ steps.jar.outputs.jar }}
     steps:
       - name: checkout
         uses: actions/checkout@v5
@@ -27,7 +29,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build maven
-        run: mvn clean install
+        id: jar
+        run: |
+          mvn clean install
+          jar_file = $(ls target/*.jar | head -n 1)
+          echo "jar=$jar_file" >> $GITHUB_OUTPUT
       - name: run test
         run: mvn test
       - name: upload artifact
@@ -43,5 +49,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: To-do-jar
+      - name: jar name
+        run: |
+          echo "JAR-NAME : ${{ needs.JAVA-Build.outputs.jar }}"
       
 
