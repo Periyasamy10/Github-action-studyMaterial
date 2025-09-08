@@ -1,0 +1,12 @@
+name: event trigger pull
+on: 
+    pull_request:
+        types: [opened, closed]
+        branches:
+            - 'main'
+jobs:
+    demo-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: event trigger pull
+              run: echo "this job is trigger based on pull request to main"
