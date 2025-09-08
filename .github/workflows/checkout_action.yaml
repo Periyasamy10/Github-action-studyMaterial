@@ -1,0 +1,8 @@
+name: action demo
+on: workflow_dispatch
+jobs:
+    checkout:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout source code
+              uses: actions/checkout@v5
