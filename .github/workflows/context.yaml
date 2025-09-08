@@ -1,0 +1,19 @@
+name: context demo
+on: 
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  context-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: github context
+        run: echo "${{ github.repository }}"
+      - name: github branch
+        run: echo "${{ github.ref }}"
+      - name: runner os
+        run: echo "${{ runner.os }}"
+      - name: job status
+        run: echo "${{ job.status }}"
