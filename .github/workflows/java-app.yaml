@@ -32,7 +32,7 @@ jobs:
         id: jar
         run: |
           mvn clean install
-          jar_file = $(ls target/*.jar | head -n 1)
+          jar_file=$(ls target/*.jar | head -n 1)
           echo "jar=$jar_file" >> $GITHUB_OUTPUT
       - name: run test
         run: mvn test
