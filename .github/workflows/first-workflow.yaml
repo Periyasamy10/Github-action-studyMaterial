@@ -1,0 +1,11 @@
+name : first-workflow
+on: workflow_dispatch
+jobs:
+    first-job:
+        runs-on: ubunbtu-latest
+        steps:
+            - name: print echo statement
+              run: echo "Hello"
+
+
+  
