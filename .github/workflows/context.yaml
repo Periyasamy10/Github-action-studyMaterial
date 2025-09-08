@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: github context
-        run: echo "${{ github.repository }}"
+        run: echo "${{ github }}"
       - name: github branch
         run: echo "${{ github.ref }}"
       - name: runner os
-        run: echo "${{ runner.os }}"
+        run: echo "${{ runner }}"
       - name: runner os
         run: echo "${{ runner.name }}"
       - name: job status
-        run: echo "${{ job.status }}"
+        run: echo "${{ job }}"
