@@ -1,0 +1,10 @@
+name: demo schedule event
+on:
+    schedule:
+        - cron: "*/1 * * * *"
+jobs:
+    demo-schedule:
+        runs-on: ubuntu-latest
+        steps:
+            - name: demo schedule event
+              run: echo "This is triggered based on cron job"
