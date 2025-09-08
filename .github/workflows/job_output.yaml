@@ -1,0 +1,21 @@
+name: Job outputs
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      my-msg : ${{ steps.my-msg.outputs.msg }}
+      second-msg: ${{ steps.second-msg.outputs.msg }}
+    steps:
+      - id: my-msg
+        run: echo "msg=This is from job1" >> $GITHUB_OUTPUT 
+      - id: second-msg
+        run: echo "msg=This is second message from job1" >> $GITHUB_OUTPUT
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: output the value from job1
+        run: |
+          echo "my-msg : ${{ needs.job1.outputs.my-msg }}"
+          echo "second-msg: ${{ needs.job1.outputs.second-msg }}"
