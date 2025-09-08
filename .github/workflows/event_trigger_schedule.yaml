@@ -1,7 +1,7 @@
 name: demo schedule event
 on:
     schedule:
-        - cron: "*/1 * * * *"
+        - cron: "*/30 * * * *"
     workflow_dispatch:
 jobs:
     demo-schedule:
