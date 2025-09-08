@@ -15,5 +15,7 @@ jobs:
         run: echo "${{ github.ref }}"
       - name: runner os
         run: echo "${{ runner.os }}"
+      - name: runner os
+        run: echo "${{ runner.name }}"
       - name: job status
         run: echo "${{ job.status }}"
