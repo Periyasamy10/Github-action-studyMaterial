@@ -1,0 +1,15 @@
+name: demo event trigger
+on: 
+    push:
+        branches:
+            - 'main'
+
+jobs:
+    demo:
+        runs-on: ubuntu-latest
+        steps:
+            - name : demo job
+              run: echo "This event is triggered based on push request to main"
+
+
+  
