@@ -12,7 +12,8 @@ jobs:
                 distribution: 'temurin'
                 java-version: '17'
     
-    install-java:
+    demo-echo:
+        needs: checkout
         runs-on: ubuntu-latest
         steps:
             - name: demo
