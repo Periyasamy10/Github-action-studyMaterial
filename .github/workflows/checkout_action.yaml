@@ -6,3 +6,13 @@ jobs:
         steps:
             - name: checkout source code
               uses: actions/checkout@v5
+            - name: setup JDK
+              uses: actions/setup-java@v5
+              with:
+                java-version: '17'
+    
+    install-java:
+        runs-on: ubuntu-latest
+        steps:
+            - name: demo
+              run: echo "Testing"
