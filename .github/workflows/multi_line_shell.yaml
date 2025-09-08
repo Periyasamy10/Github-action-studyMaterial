@@ -1,0 +1,13 @@
+name: multi line shell command
+on: workflow_dispatch
+jobs:
+    multi-line-shell:
+        runs-on: ubuntu-latest
+        steps:
+            - name: run multiline shell
+              run: |
+               echo "First line"
+               echo "Second line"
+
+
+  
