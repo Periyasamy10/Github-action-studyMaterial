@@ -1,0 +1,14 @@
+name: filters and activity types
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - 'Readme.md'
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: demo trigger for filters
+        run: echo "This will trigger on push branch and invalid for readme file"
