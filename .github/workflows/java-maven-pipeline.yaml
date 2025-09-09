@@ -42,7 +42,7 @@ jobs:
           restore-keys: maven-cache-${{ runner.os }}-
       - name: Maven Build
         run: |
-          mvn clean Install
+          mvn clean install
           tar=$(ls target/*.jar | head -n 1 )
           echo "tar-name=$tar" >> GITHUB_OUTPUT
       - name: Unit Test
